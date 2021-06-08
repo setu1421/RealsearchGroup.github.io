@@ -1,0 +1,17 @@
+---
+layout: default
+title: Gallery
+---
+
+
+
+<div class="card-columns">
+    {% comment %}
+    Sort the projects by date, putting those without dates last
+    {% endcomment %}
+    {% assign pictures_by_date = site.pictures | sort: 'last-updated', 'first' %}
+    {% assign pictures_by_date = pictures_by_date | reverse %}
+    {% for p in pictures_by_date %}
+    {% include picture-card.html picture=p %}
+    {% endfor %}
+</div>

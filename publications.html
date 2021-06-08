@@ -1,0 +1,41 @@
+---
+layout: default
+title: Publications
+---
+
+<script type="text/javascript" src="{{ site.base }}/js/data.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            data: dataSet,
+            columns: [
+                {
+                    title: 'Title', data: "title", defaultContent: "", width: '45%',
+                    "render": function (data, type, row, meta) {
+                        if (type === 'display') {
+                            data = '<a href="' + row.url + '">' + data + '</a>';
+                        }
+
+                        return data;
+                    }
+                },
+                { title: 'Author', data: "author", defaultContent: "", width: '25%', },
+                { title: 'Year', data: "year", defaultContent: "", width: '5%', },
+                // { title: "Type" },
+                { title: "Venue", data: 'venue', defaultContent: "", width: '25%', }
+            ],
+            "order": [[2, "desc"]]
+        });
+    });
+</script>
+
+<table id="example" class="stripe display compact row-border hover" style="width:100%">
+</table>
+
+
+<!-- <p>
+    <a href="{{ site.base }}/bib/pubs.bib">Download BibTeX.</a>
+</p>
+
+{% include pubs.html %} -->
