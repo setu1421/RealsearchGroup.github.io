@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ site.name }}: {{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ site.base }}/css/group.css">
+
+
+    <!-- Support retina images. -->
+    <script type="text/javascript" src="{{ site.base }}/js/srcset-polyfill.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
+        <div class="header d-flex
+                        flex-column
+                        flex-md-row justify-content-md-between">
+            <a href="{{ site.base }}/" class="">
+                <img src="{{ site.base }}/img/rslogo.png" srcset="{{ site.base }}/img/realsearch.png" alt="Awesome"
+                    id="logo">
+            </a>
+            <ul class="nav nav-pills justify-content-center">
+
+                {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
+                {% for item in site.navigation %}
+
+                {% assign itemshorturl = item.link | replace:'.html','' %}
+
+                {% assign maybe-active = '' %}
+                {% if item.title == 'Research' and page.layout == 'project' %}
+                {% assign maybe-active = 'active' %}
+                {% endif %}
+                {% if itemshorturl == shorturl or is-research %}
+                {% assign maybe-active = 'active' %}
+                {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link {{ maybe-active }}" href="{{ site.base }}{{ item.link }}">
+                        {{ item.title }}
+                    </a>
+                </li>
+
+                {% endfor %}
+
+            </ul>
+        </div>
+
+        {% if page.image and page.layout != 'picture' %}
+        <img src="{{ page.image }}" alt="{{ page.title }}" style="max-width: 400px"
+            class="img-fluid mx-auto d-block mb-4" />
+        {% endif %}
+
+        {% if page.image and page.layout == 'picture' %}
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid mx-auto d-block mb-4" />
+        {% endif %}
+
+        {% if page.notitle != true %}
+        <h1>{{ page.title }}</h1>
+        {% endif %}
+
+        {{ content }}
+
+        <div class="footer">
+            <p>
+                <a href="http://csc.ncsu.edu/">Department of Computer Science</a>
+                at the
+                <a href="http://ncsu.edu/">North Carolina State University</a>
+            </p>
+        </div>
+
+    </div> <!-- /container -->
+
+</body>
+
+</html>
