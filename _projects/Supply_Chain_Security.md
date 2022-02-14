@@ -1,6 +1,6 @@
 ---
 title: Supply Chain Weaklinks and Best Security Practices
-subtitle: Aid ti identify secure software products in ecosystem that are resistant to supply
+subtitle: Aid to identify secure software products in ecosystem that are resistant to supply
 chain attacks.
 
 
