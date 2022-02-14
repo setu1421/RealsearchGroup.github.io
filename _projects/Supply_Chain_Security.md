@@ -14,7 +14,7 @@ last-updated: 2022-02-14
 notitle: false
 nolink: false 
 
-image: _pictures/supply-chain-security.jpg
+image: pictures/supply-chain-security.jpg
 link: false
 ---
 
