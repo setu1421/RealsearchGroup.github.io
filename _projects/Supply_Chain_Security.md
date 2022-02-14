@@ -14,7 +14,7 @@ last-updated: 2022-02-14
 notitle: false
 nolink: false 
 
-image: https://github.com/RealsearchGroup/RealsearchGroup.github.io/blob/main/_pictures/supply-chain-security.jpg
+image: _pictures/supply-chain-security.jpg
 link: false
 ---
 
