@@ -1,13 +1,12 @@
 ---
 title: Supply Chain Weaklinks and Best Security Practices
-subtitle: Aid to identify secure software products in ecosystem that are resistant to supply
-chain attacks.
+subtitle: Aid to identify secure software products in ecosystem that are resistant to supply chain attacks.
 
 
 description: To aid software practitioners on to select a secure software product by demonstrating the weak links and the best security practices of the products in a ecosystem.
 people:
     - profx
-    - grad-a
+    - grad-e
 
 layout: project
 last-updated: 2022-02-14
