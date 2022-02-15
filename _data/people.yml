@@ -62,6 +62,14 @@ grad-e:
     image: "img/people/Nusrat.png"
     bio: null
     github: null
+    
+ grad-f:
+    display_name: "Setu Kumar Basak"
+    role: grad
+    webpage: "https://www.linkedin.com/in/setu1421/"
+    image: "img/people/Setu.png"
+    bio: null
+    github: null   
 
 
 alum-a:
